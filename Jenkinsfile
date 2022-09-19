@@ -9,14 +9,14 @@ pipeline {
      }
 
 
-      stage('--Build--') {
+      stage('Build') {
             steps {
-                sh "mvn clean install -DskipTests=true"
+                sh 'mvn clean install -DskipTests=true'
             }
         }
-        stage('--package--') {
+        stage('Package') {
             steps {
-                sh "mvn package -DskipTest=true"
+                sh 'mvn package -DskipTests=true'
             }
         }
     }
