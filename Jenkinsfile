@@ -4,9 +4,9 @@ pipeline {
     stage('Git Checkout'){
         steps{
             git credentialsId:'MyGitHub',url:'https://github.com/Nithyareddy62/my-app.git'
-
-}
-     }
+        }
+    }
+    
 
 
       stage('Build') {
