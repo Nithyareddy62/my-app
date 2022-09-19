@@ -9,15 +9,16 @@ pipeline {
     
 
 
-      stage('Build') {
-            steps {
+     
+     stage('Build') {
+         steps {
                 sh 'mvn clean install -DskipTests=true'
-            }
-      }
-        stage('Package') {
-            steps {
+         }
+     }
+     stage('Package') {
+         steps {
                 sh 'mvn package -DskipTests=true'
-            }
-        }
-    }
+         }
+     }
+   }
 }
