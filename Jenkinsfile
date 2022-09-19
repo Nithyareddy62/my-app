@@ -4,8 +4,8 @@ pipeline {
         stage('Git Checkout'){
             steps{
                  git credentialsId:'MyGitHub',url:'https://github.com/Nithyareddy62/my-app.git'
+            }
         }
-    }
     
 
 
@@ -13,12 +13,12 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn clean install -DskipTests=true'
+            }
         }
-    }
-    stage('Package') {
-        steps {
+        stage('Package') {
+            steps {
                 sh 'mvn package -DskipTests=true'
+            }
         }
     }
-   }
 }
