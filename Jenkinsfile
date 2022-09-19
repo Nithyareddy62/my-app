@@ -7,18 +7,29 @@ pipeline {
             }
         }
     
+        stage('Build') {
 
+            steps {
+
+                sh 'mvn clean install -DskipTests=true'
+
+            }
+
+        }
+
+        stage('Package') {
+
+            steps {
+
+                sh 'mvn package -DskipTests=true'
+
+            }
+
+        }
+
+    }
+
+}
 
      
-        stage('Build') {
-            steps {
-                sh 'mvn clean install -DskipTests=true'
-            }
-        }
-        stage('Package') {
-            steps {
-                sh 'mvn package -DskipTests=true'
-            }
-        }
-    }
-}
+        
