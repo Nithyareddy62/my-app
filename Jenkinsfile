@@ -14,16 +14,16 @@ pipeline {
             }
         stage('Build') {
             steps {
-                //script {
-                    sh 'mvn clean install -DskipTests=true'
-                 //}
+                
+                 sh 'mvn clean install -DskipTests=true'
+                 
             }
         }
         stage('Package') {
             steps {
-                //script {
-                    sh 'mvn package -DskipTests=true'
-                //}
+                
+                 sh 'mvn package -DskipTests=true'
+                
             }
         }
     }
