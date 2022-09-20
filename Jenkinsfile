@@ -12,6 +12,7 @@ pipeline {
                     sh 'mvn clean install sonar:sonar -DskipTests=true -Dsonar.origanization="sonarticket" -Dsonar.projectKey="sonarticket" -Dsonar.projectName="sonarticket"'
                 }
             }
+        }
         stage('Build') {
             steps {
                 sh 'mvn clean install -DskipTests=true'
@@ -20,10 +21,10 @@ pipeline {
         stage('Package') {
             steps {
                 sh 'mvn package -DskipTests=true'
+                }
             }
         }
     }
-}
 
      
         
