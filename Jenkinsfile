@@ -9,10 +9,9 @@ pipeline {
         stage('sonar qube'){
             steps {
                 withSonarQubeEnv('sonarqube'){
-                    sh 'mvn clean install sonar:sonar -DskipTests=true -Dsonar.origanization="sonarticket" -Dsonar.projectKey="sonarticket" -Dsonar.projectName="sonarticket"'
+                    sh 'mvn clean install sonar:sonar -DskipTests=true -Dsonar.origanization="Nithyareddy62" -Dsonar.projectKey="Nithyareddy62" -Dsonar.projectName="Demopipeline"'
                 }
             }
-        }
         stage('Build') {
             steps {
                 sh 'mvn clean install -DskipTests=true'
@@ -21,10 +20,10 @@ pipeline {
         stage('Package') {
             steps {
                 sh 'mvn package -DskipTests=true'
-                }
             }
         }
     }
+}
 
      
         
