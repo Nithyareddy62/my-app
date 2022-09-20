@@ -6,29 +6,23 @@ pipeline {
                 git credentialsId:'MyGitHub',url: 'https://github.com/Nithyareddy62/my-app.git'
             }
         }
-    
+        stage('sonar qube'){
+            steps {
+                withSonarQubeEnv('sonarqube'){
+                    sh 'mvn clean install sonar:sonar -DskipTests=true -Dsonar.origanization="sonarticket" -Dsonar.projectKey="sonarticket" -Dsonar.projectName="sonarticket"'
+                }
+            }
         stage('Build') {
-
             steps {
-
                 sh 'mvn clean install -DskipTests=true'
-
             }
-
         }
-
         stage('Package') {
-
             steps {
-
                 sh 'mvn package -DskipTests=true'
-
             }
-
         }
-
     }
-
 }
 
      
