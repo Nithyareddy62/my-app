@@ -9,25 +9,21 @@ pipeline {
         stage('sonar qube'){
             steps {
                 withSonarQubeEnv('sonarqube'){
-                    sh 'mvn clean install sonar:sonar -DskipTests=true -Dsonar.origanization="nithyareddy62" -Dsonar.projectKey="nithyareddy62" -Dsonar.projectName="Demo"'
+                    sh 'mvn clean install sonar:sonar -DskipTests=true -Dsonar.origanization="nithyareddy62" -Dsonar.projectKey="nithyareddy62" -Dsonar.projectName="Demopipeline"'
                 }
             }
+        }
         stage('Build') {
             steps {
+                sh 'mvn clean install -DskipTests=true'
                 
-                 sh 'mvn clean install -DskipTests=true'
-                 
             }
         }
         stage('Package') {
             steps {
-                
-                 sh 'mvn package -DskipTests=true'
+                sh 'mvn package -DskipTests=true'
                 
             }
         }
     }
 }
-
-     
-        
