@@ -10,13 +10,14 @@ pipeline {
             steps {
                 withSonarQubeEnv('sonarqube'){
                     sh 'mvn clean install sonar:sonar -DskipTests=true -Dsonar.organization="myapp" -Dsonar.projectKey="myapp-" -Dsonar.projectName="myapp-"'
+                    sh '-illegal-access=permit'
                 }
             }
         }
         stage('Build') {
             steps {
                 sh 'mvn clean install -DskipTests=true'
-                sh '-illegal-access=permit'
+               
             }
         }
         stage('Package') {
