@@ -9,7 +9,7 @@ pipeline {
         stage('File creation'){
             steps {
                 sh 'pwd;ls -lrt'
-                sh 'cd pwd && mkdir Testing'
+                sh 'pwd && mkdir Testing'
                 sh 'cd Testing && touch Note.txt'
                 echo "the file creation is done"
                 }
