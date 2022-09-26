@@ -11,6 +11,7 @@ pipeline {
                 sh 'pwd;ls -lrt'
                 sh 'cd pwd && mkdir Testing'
                 sh 'cd Testing && touch Note.txt'
+                echo "the file creation is done"
                 }
                 }
         }
