@@ -9,7 +9,7 @@ pipeline {
         stage('sonar qube'){
             steps {
                 withSonarQubeEnv('sonarqube'){
-                    sh 'mvn clean install sonar:sonar -DskipTests=true -Dsonar.organization="pipelinescm1" -Dsonar.projectKey="pipelinescm1" -Dsonar.projectName="Pipelinescm"'
+                    sh 'mvn clean install sonar:sonar -DskipTests=true -Dsonar.organization="nithyareddy62" -Dsonar.projectKey="nithyareddy62" -Dsonar.projectName="Pipelinescm"'
                    
                 }
             }
