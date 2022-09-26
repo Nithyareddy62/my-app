@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    stages {
+        stage('Git Checkout'){
+            steps {
+                git credentialsId:'MyGitHub',branches:[[name: "*/master" ]],url: 'https://github.com/Nithyareddy62/my-app.git'
+            }
+        }
+        stage('File creation'){
+            steps {
+                sh 'pwd;ls -lrt'
+                sh 'cd pwd && mkdir Testing'
+                sh 'cd Testing && touch Note.txt'
+                }
+                }
+        }
+        }
+        
